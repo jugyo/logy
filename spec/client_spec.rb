@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/spec_helper'
 
 module Chlgr
   describe Client do
-    DB_PATH = '/tmp/chlgr.db'
+    DB_PATH = '/tmp/chlr.db'
     before do
       File.delete(DB_PATH) if File.exists?(DB_PATH)
     end

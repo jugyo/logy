@@ -9,7 +9,7 @@ module Chlgr
     end
 
     add :add do
-      file = Tempfile.new('chlgr')
+      file = Tempfile.new('chlr')
       system ENV['EDITOR'] || 'vi', file.path
       text = open(file.path).read
       Log << {:text => text, :created_at => Time.now}

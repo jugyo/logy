@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
-require 'chlgr'
-Chlgr::Client.setup(ARGV[0] || '~/chlgr.db').start
+require 'chlr'
+Chlgr::Client.setup(ARGV[0] || '~/chlr.db').start
