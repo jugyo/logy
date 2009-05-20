@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'chlr'
-  s.version = '0.0.1'
+  s.version = '0.1.0'
   s.summary = "Chlr is a Terminal based ChangeLoging tool."
   s.description = "Chlr is a Terminal based ChangeLoging tool."
   s.files = %w( lib/chlr/client.rb lib/chlr/command.rb lib/chlr/log.rb lib/chlr/standard_commands.rb lib/chlr/version.rb lib/chlr.rb
