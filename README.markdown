@@ -28,7 +28,7 @@ The database is a file of sqlite3.
 
     % chlr ~/memo.db
 
-Requirement
+Requirements
 --------
 
 * sqlite3
