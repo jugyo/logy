@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+$:.unshift(File.dirname(__FILE__) + '/../lib')
+
+require 'irb'
+require 'chlgr'
+
+Chlgr::Client.setup(ARGV[0] || '~/chlgr.db')
+include Chlgr
+
+IRB.start
