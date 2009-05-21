@@ -12,7 +12,7 @@ Install
 --------
 
     gem source -a http://gems.github.com
-    sudo gem install chlr
+    sudo gem install jugyo-chlr
 
 Synopsis
 --------
