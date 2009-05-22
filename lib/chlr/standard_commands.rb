@@ -5,7 +5,7 @@ require 'tempfile'
 module Chlgr
   class Command
     add :list do |*args|
-      output Log.reverse_order(:created_at)
+      output Log
     end
 
     add :add do
@@ -32,12 +32,12 @@ module Chlgr
     end
 
     def self.output(dataset, &block)
-      puts dataset.limit(10).reverse.map {|log|
+      dataset.reverse_order(:created_at).limit(10).each {|log|
         time = log.created_at.strftime("%Y-%m-%d %X")
         header = TermColor.parse("<90>-- [##{log.id}] #{time} --</90>")
         text = block ? block.call(log.text) : log.text
-        "#{header}\n#{text}"
-      }.join("\n")
+        puts "#{header}\n#{text}"
+      }
     end
   end
 end
