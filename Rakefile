@@ -1,28 +1,17 @@
-$:.unshift File.dirname(__FILE__) + '/lib/'
-require 'logy'
 require 'spec/rake/spectask'
+require 'rake/clean'
+require 'rake/gempackagetask'
+require 'rake/rdoctask'
 
-desc 'run all specs'
-Spec::Rake::SpecTask.new do |t|
-  t.spec_files = FileList['spec/**/*_spec.rb']
-  t.spec_opts = ['-c']
-end
+name = 'logy'
+version = '0.1.0'
 
-desc 'Generate gemspec'
-task :gemspec do |t|
-  open('logy.gemspec', "wb" ) do |file|
-    file << <<-EOS
-Gem::Specification.new do |s|
-  s.name = 'logy'
-  s.version = '#{Chlr::VERSION}'
+spec = Gem::Specification.new do |s|
+  s.name = name
+  s.version = version
   s.summary = "Chlr is a Terminal based ChangeLoging tool."
   s.description = "Chlr is a Terminal based ChangeLoging tool."
-  s.files = %w( #{Dir['lib/**/*.rb'].join(' ')}
-                #{Dir['spec/**/*.rb'].join(' ')}
-                #{Dir['scripts/*'].join(' ')}
-                README.markdown
-                History.txt
-                Rakefile )
+  s.files = %w(Rakefile README.markdown History.txt) + Dir.glob("{lib,spec,scripts}/**/*")
   s.executables = ["logy"]
   s.add_dependency("sequel", ">= 2.12.0")
   s.add_dependency("termcolor", ">= 1.0.0")
@@ -32,12 +21,33 @@ Gem::Specification.new do |s|
   s.rubyforge_project = 'logy'
   s.has_rdoc = false
 end
-    EOS
-  end
-  puts "Generate gemspec"
+
+Rake::GemPackageTask.new(spec) do |p|
+  p.need_tar = true
 end
 
-desc 'Generate gem'
-task :gem => :gemspec do |t|
-  system 'gem', 'build', 'logy.gemspec'
+task :install => [ :package ] do
+  sh %{sudo gem install pkg/#{name}-#{version}.gem}
 end
+
+task :uninstall => [ :clean ] do
+  sh %{sudo gem uninstall #{name}}
+end
+
+desc 'run all specs'
+Spec::Rake::SpecTask.new do |t|
+  t.spec_files = FileList['spec/**/*_spec.rb']
+  t.spec_opts = ['--colour --format progress --loadby mtime --reverse']
+end
+
+Rake::RDocTask.new do |t|
+  t.rdoc_dir = 'rdoc'
+  t.title    = "rest-client, fetch RESTful resources effortlessly"
+  t.options << '--line-numbers' << '--inline-source' << '-A cattr_accessor=object'
+  t.options << '--charset' << 'utf-8'
+  t.rdoc_files.include('README.markdown')
+  t.rdoc_files.include('lib/logy.rb')
+  t.rdoc_files.include('lib/logy/*.rb')
+end
+
+CLEAN.include [ 'pkg', '*.gem' ]
