@@ -1,4 +1,4 @@
-Chlr
+Logy
 ========
 
 [http://github.com/jugyo/logy/tree/master](http://github.com/jugyo/logy/tree/master)
@@ -6,7 +6,7 @@ Chlr
 Description
 --------
 
-Chlr is a Terminal based ChangeLoging tool.
+Logy is a Terminal based ChangeLoging tool.
 
 Install
 --------
@@ -21,7 +21,7 @@ Synopsis
 
     % logy
 
-Chlr uses '~/logy.db' as a default database.
+Logy uses '~/logy.db' as a default database.
 The database is a file of sqlite3.
 
 ### To specify a database file:
