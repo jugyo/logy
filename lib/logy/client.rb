@@ -11,7 +11,7 @@ module Chlgr
           DateTime :created_at
         end
       end
-      require 'chlr/log'
+      require 'logy/log'
       self
     end
 

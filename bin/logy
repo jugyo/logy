@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'logy'
+Chlgr::Client.setup(ARGV[0] || '~/logy.db').start

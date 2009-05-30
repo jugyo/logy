@@ -3,9 +3,9 @@
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 
 require 'irb'
-require 'chlr'
+require 'logy'
 
-Chlgr::Client.setup(ARGV[0] || '~/chlr.db')
+Chlgr::Client.setup(ARGV[0] || '~/logy.db')
 include Chlgr
 
 IRB.start

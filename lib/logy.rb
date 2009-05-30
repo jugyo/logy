@@ -1,0 +1,8 @@
+require 'rubygems'
+require 'sequel'
+require 'readline'
+require 'termcolor'
+require 'logy/client'
+require 'logy/command'
+require 'logy/standard_commands'
+require 'logy/version'

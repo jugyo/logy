@@ -1,7 +1,7 @@
 Chlr
 ========
 
-[http://github.com/jugyo/chlr/tree/master](http://github.com/jugyo/chlr/tree/master)
+[http://github.com/jugyo/logy/tree/master](http://github.com/jugyo/logy/tree/master)
 
 Description
 --------
@@ -12,21 +12,21 @@ Install
 --------
 
     gem source -a http://gems.github.com
-    sudo gem install jugyo-chlr
+    sudo gem install jugyo-logy
 
 Synopsis
 --------
 
 ### Start:
 
-    % chlr
+    % logy
 
-Chlr uses '~/chlr.db' as a default database.
+Chlr uses '~/logy.db' as a default database.
 The database is a file of sqlite3.
 
 ### To specify a database file:
 
-    % chlr ~/memo.db
+    % logy ~/memo.db
 
 Requirements
 --------
