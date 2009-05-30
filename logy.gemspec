@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'logy'
-  s.version = '0.1.0'
+  s.version = '0.2.0'
   s.summary = "Logy is a Terminal based ChangeLoging tool."
   s.description = "Logy is a Terminal based ChangeLoging tool."
   s.files = %w( lib/logy/client.rb lib/logy/command.rb lib/logy/log.rb lib/logy/standard_commands.rb lib/logy/version.rb lib/logy.rb

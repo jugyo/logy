@@ -4,7 +4,7 @@ require 'rake/gempackagetask'
 require 'rake/rdoctask'
 
 name = 'logy'
-version = '0.1.0'
+version = '0.2.0'
 
 spec = Gem::Specification.new do |s|
   s.name = name
