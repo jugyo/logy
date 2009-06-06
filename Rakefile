@@ -19,7 +19,7 @@ spec = Gem::Specification.new do |s|
   s.email = 'jugyo.org@gmail.com'
   s.homepage = 'http://github.com/jugyo/logy'
   s.rubyforge_project = 'logy'
-  s.has_rdoc = false
+  s.has_rdoc = true
 end
 
 Rake::GemPackageTask.new(spec) do |p|
